@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+ <html lang="en" manifest="https://smtechnology133.github.io/englishApp/english.html">
+ <head>
+	<title>English Language Android Applications</title>
+	 
+	 <meta charset="UTF-8"/>
+	 
+	 <meta name="viewport" content="width=device-width, initial-scale=1.0"/> 
+ 	
+ 	<meta name="keywords" content="English Application, English Android Application"/>
+
+<meta name="Author" content="Salmanda"/>
+
+<meta name="revised" content="Profiler, 2/7/2025"/>
+ 
+  <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7"/>
+    
+    <meta name="mobile-web-app-capable" content="yes"/>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    
+    <meta name="msapplication-starturl" content=""/>
+    
+     <meta name="robots"
+content="noindex,nofollow"/>
+    
+    <meta name="theme-color" content="teal"/>
+    
+     <link rel="icon" type="image" href="africaOnlineIcon.png"/>
+  
+  <link rel="stylesheet" href="file:///storage/emulated/0/projects/vlibrary/profiler.css" type="text/css"/>
+  
+	
+	 <link rel="stylesheet" href="profiler1.css" type="text/css"/>
+		 
+		 <link rel="stylesheet" type="text/css" href="bootstrap.min.css">
+
+	 <style>
+	 	.all{
+	 		border-radius:10px;
+	 		}
+	 	
+	 	 	html:active{
+	 		background: maroon;
+	 		}
+	 	
+	 	img{
+height: 35px;
+width: 40px;
+border-radius: 10px; 
+padding: 2px;
+}
+
+body{
+ text-align: center;
+ font-family: georgia;
+}
+
+span{
+	font-size: 15px;
+	color: white;
+	border: solid orange 1px;
+}
+
+ul,h5,h6{ 
+	font-size: 12px;
+}
+
+p{
+	font-size: 8px;
+	color: teal;
+}
+
+h1{
+	color: white;
+}
+
+button{
+	color: white;
+}
+	 	
+	 	a{
+	color: teal;
+	font-size:12px;
+	border-radius: 8px;
+	padding: 2px;
+	background-color: teal;
+	border: solid orange 1px;
+}
+
+button{
+	color: orange;
+}
+
+mark{
+	border: solid orange 1px;
+	border-radius: 3px;
+	background-color: orange;
+	color: teal;
+	font-size: 12px;
+	font-family: courier;
+	font-weight: bolder;
+}
+
+/*Download Confirmation box css*/
+    #confirmBox {
+      display: none;
+      position: fixed;
+      top: 30%;
+      left: 50%;
+      transform: translate(-50%, -30%);
+      background-color: white;
+      border: 1px solid orange;
+      border-radius: 10px;
+      padding: 20px;
+      width: 300px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.5);
+      z-index: 1000;
+      background: linear-gradient(to right, teal, maroon);
+    }
+
+    #confirmBox button {
+      margin: 10px 10px 0 0;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #confirmBox #yesBtn { 
+background-color: teal;         color: white; 
+font-size: 10px;
+    }
+    
+    #confirmBox #noBtn { 
+    background-color: maroon;
+    color: white;
+    font-size: 10px;
+    }
+
+    #overlay {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      z-index: 999;
+    }
+/*End Download Confirmation box css*/ 
+    	
+    	 /*floating button css*/
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 13px;
+      background-color:teal;
+      color: white;
+      border: solid orange 1px;
+      border-radius: 50%;
+      width: 45px;
+      height: 45px;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: background-color 0.3s;
+    } 
+
+    .floating-btn:hover {
+      background-color: orange;
+    }
+    /*end floating button css*/
+    
+    .picturee{
+width: 30px;
+height: 30px;
+border: 1px solid orange;
+border-radius: 20px;
+padding: 1px;
+margin-top: 6px;
+}
+	</style>
+	
+ </head>
+ 
+	 <body>
+	 	
+	 	 	<nav style="font-size: 4px;" role="navigation" class="navbar navbar-default navbar-fixed-top" id="gradclass">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    <div class="navbar-header">
+      <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button><br>
+      <a style="color: orange; font-size: 20px;" onclick="africaOnlineHome()" class="navbar-brand">Africa Online</a> 
+      
+      <img class="picturee" src="file:///storage/emulated/0/projects/vlibrary/africaOnlineIcon.png"/>
+    </div><br>
+    
+    <!-- Collection of nav links, forms, and other content for toggling -->
+    <div id="navbarCollapse" class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a onclick="africaOnlineHome();color(this);" style="color: orange;"><mark>🏡 Home</mark></a></li>
+        
+        <li><a onclick="s300();color(this);" style="color: grey; background: teal" href="#"><mark>🤖GPT-S300</mark></a></li>
+        
+      <li class="dropdown">
+       <a onclick="color(this);" style="color: orange; border: solid orange 1px; background: teal" data-toggle="dropdown" class="dropdown-toggle" href="#"> <mark>📄Exam<b class="caret"></b></mark></a>
+          
+          <ul role="menu" class="dropdown-menu">
+            <li><a style="color: orange; background: teal" href="file:///storage/emulated/0/projects/examMaterial/msceExams/englishExam/subjects.html">📄PSLC Level Section</a></li>
+            
+           <li><a style="color: orange; background: teal" href="file:///storage/emulated/0/projects/examMaterial/jceExams/englishExam/subjects.html">📄JCE Level Section</a></li>
+  
+            <li><a style="color: orange; background: teal" href="file:///storage/emulated/0/projects/examMaterial/pslcExams/englishExam/subjects.html">📄MSCE Level Section</a></li>
+          </ul>
+        </li>
+      </ul>
+	 
+	 <!--search my web application-->
+      <form role="search" class="navbar-form navbar-left">
+        <div class="form-group">
+          <input style="border: solid orange 1px;" type="text" id="searchBox" placeholder="🔎 Search application" oninput="searchSite()" class="form-control">
+<div id="results"></div>
+        </div>
+     <!--end search my web application-->
+      </form>
+      
+   <!--button to share website-->
+	 <button onclick="shareWebsite();color(this);" style="border-color: orange" type="button" class="btn btn-secondary btn-sm">Share  ↪</button>
+<!--end button to share website-->
+
+	 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+	 <button onclick="showAlert('Hello! This is a custom alert with sound! salmanda open everything as you wish');color(this);" style="border-color:orange" type="button"  class="btn btn-secondary btn-sm">Help 📰</button> 
+ 
+ &nbsp; &nbsp;  &nbsp; &nbsp; &nbsp; &nbsp;
+		<button onclick="color(this);" style="border-color:orange" type="button" class="btn btn-secondary btn-sm">Connect  💬</button>
+</br></br></div>
+</nav><br><br><br>
+
+	 	<div style="border:1px solid orange; border-radius: 3px; padding:4px" id="gradclass" class="all">
+	 		
+	 		<!--javascript code to display time-->
+  <h5 id="txt"></h5> <script> var today=new Date(); document.getElementById('txt').innerHTML=today; </script> 
+	 		<!--end javascript code to display time-->
+	 		
+	 		<h1><span>Africa Online Vitual Library</span></h1>
+	 		
+	 		<h2><span>"Knowledge is Power"</span></h2>
+	
+	 		<div class="salmanda">
+	 		<div class="salma" style = "box-shadow: 4px 4px maroon;">
+	 			
+	 			<!--images-->
+	 			<div class="wrapper clearfix"><span>English Language Android Apps.</span><br><br>
+	
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+ <p>Cras justo odio jjj.</p>
+ <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+      <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+    <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+      <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+   <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+     <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+   <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+     <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+     <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+       <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+   <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+      <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+    <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+      <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+    <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+       <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+    <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+      <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+    <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+     <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+ <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+      <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container;">
+    <div class="row">
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler.JPG" alt="Sample Image">
+          <div class="caption">
+            
+<p>Donecuhhhhjjjj id elit hjjj</p>
+       <a style="color: orange;  background: teal;" href="file3.zip" data-size="5.4 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler1.JPG" alt="Sample Image">
+          <div class="caption">
+           
+    <p>Cras justo odio jjj.</p>
+          <a style="color: orange;  background: teal;" href="file2.docx" data-size="850 KB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-xs-4">
+        <div style="background: orange" class="thumbnail">
+          <img src="profiler2.JPG" alt="Sample Image">
+          <div class="caption">
+            
+       <p>Comedy hjjjhh yyu</p>
+            <a style="color: orange;  background: teal;" href="file1.pdf" data-size="1.2 MB" onclick="confirmDownload(event, this)">Download</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!--time stamp-->
+<p style="color: orange; font-size: 12px; text-shadow: 4px 4px 8px orange;" id="timestamp"></p>
+</div>
+  <!--end images-->
+  
+  <!-- Custom download Confirmation Box -->
+<div id="overlay"></div>
+<div id="confirmBox">
+  <p style="color: orange; font-size: 12px;" id="confirmMessage">Are you sure you want to download this file?</p>
+  <button id="yesBtn">Download</button>
+  <button id="noBtn">Cancel</button>
+</div>
+<!--End Custom download Confirmation Box -->
+
+	<!--custom alert box-->
+<div id="overlay"></div>
+<div id="customAlert">
+  <p class="help" style="color: orange; font-family: georgia;" id="alertMessage"></p>
+  <button onclick="closeAlert()">OK</button>
+</div>
+
+<!-- Sound file (you can replace this with another link or base64) -->
+<audio id="alertSound" src="https://www.soundjay.com/button/beep-07.mp3" preload="auto"></audio>
+<!--end custom alert box-->
+ 
+	<!--text modal of advert-->
+<div id="myModal" class="modal fade" >
+<div class="modal-dialog; modal-lg"> 
+<div class="modal-content"> 
+<div class="modal-header"> 
+
+<h6 style="border: 1px solid orange; color: orange; background: teal" class="modal-title">From SM Tech, Welcome knowledge seeker.</h6> 
+</div> 
+<div style="border: 1px solid orange;" class="modal-body; salma"> 
+<p style="font-size: 12px; color: orange;">(Replace this text in here) This user interface component is easy to use, created mobile phone first you can edit and run it on your smart phone, alternatively with a little knowledge you can deploy your work on the Internet. </p> 
+
+</div> 
+<div class="modal-footer"> 
+<button style="border: solid orange 1px;" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close &times;
+</button> 
+</div> 
+</div> 
+</div> 
+</div>
+<!--end text modal of advert-->
+
+<!--text modal of details-->
+<div id="myModal1" class="modal fade" >
+<div class="modal-dialog; modal-lg"> 
+<div class="modal-content"> 
+<div class="modal-header"> 
+
+<h6 style="border: 1px solid orange; color: orange; background: teal" class="modal-title">From SM Tech, Welcome knowledge seeker.</h6> 
+</div> 
+<div style="border: 1px solid orange;" class="modal-body; salma"> 
+<p style="font-size: 12px; color: orange;">These are the details</p> 
+
+</div> 
+<div class="modal-footer"> 
+<button style="border: solid orange 1px;" type="button" class="btn btn-secondary btn-sm" data-dismiss="modal">Close &times;
+</button> 
+</div> 
+</div> 
+</div> 
+</div>
+<!--end text modal of details-->
+	 
+	 <!--button-->
+<br>	 <button style="border-color: orange" type="button" class="btn btn-secondary btn-sm" onclick="vlibrary();color(this);"><mark>🏡Home</mark></button>
+	 
+	 &nbsp;
+	   <button onclick="color(this);" style="border-color: orange" type="button" class="btn btn-secondary btn-sm" data-toggle="modal" data-target="#myModal1"><mark>📰Details</mark></button>
+	   
+	    &nbsp;
+	   <button style="border-color:orange" type="button" class="btn btn-secondary btn-sm" onclick="learning();color(this);"><mark>🎓Learn</mark></button>
+	   
+	   &nbsp;
+	   <button style="border-color:orange" type="button" class="btn btn-secondary btn-sm" onclick="scrollToTop();color(this);"><mark>Top⤴</mark></button><br><br>
+	   <!--end button-->
+	   
+	   	<!--floating button-->
+	 	<button class="floating-btn" onclick="scrollToTop(); s300();">🤖</button>
+
+	 	  <script>
+    function scrollToTop() {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+  </script>
+  <!--end floating button--> 
+	
+	<!--links back & forward--> 		
+	 <span onclick="africaOnlineHome()" style="text-decoration: none; color: orange;" style="color:yellow">&laquo;Home Page&nbsp;</span> &nbsp;&nbsp;
+	 	
+	 <span onclick="nextEnglishAppPage()" style="text-decoration: none; color: orange;" style="color:yellow">&nbsp;Next Page&raquo;</span>	
+</div><br>
+
+<footer>&copy 2025 Copyright SM Technology</footer>
+	 	<!--end links back & forward-->
+	 	
+	<!--external scripts links-->
+<script src="jquery.min.js"></script>
+
+<script src="jquery-ui.min.js"></script>
+ 
+<script src="bootstrap.min.js"></script>
+
+<script src="profiler1.js"></script>
+
+<script src="file:///storage/emulated/0/projects/vlibrary/profiler.js"></script>
+<!--end external scripts links-->
+</body>
+</html>
